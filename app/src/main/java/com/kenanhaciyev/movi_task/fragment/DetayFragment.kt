@@ -1,5 +1,7 @@
 package com.kenanhaciyev.movi_task.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,6 +31,12 @@ class DetayFragment : Fragment() {
             resources.getIdentifier(gelenFilim.resim, "drawable", requireContext().packageName)
         )
 
+        binding.imagePlayButton.setOnClickListener {
+            val videoUrl = qebul.filim.url
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl))
+            startActivity(intent)
+        }
+
         binding.buttonEkle.setOnClickListener {
             Snackbar.make(it,"Secilen filim sebete elave edilsinmi",Snackbar.LENGTH_SHORT)
                 .setAction("Yes"){
@@ -39,5 +47,6 @@ class DetayFragment : Fragment() {
 
         return binding.root
     }
+
 
 }

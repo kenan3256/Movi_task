@@ -22,7 +22,6 @@ class FilimlerAdapter(var context: Context,var filimList:List<Filim>):RecyclerVi
     override fun getItemCount(): Int {
       return  filimList.count()
     }
-
     override fun onBindViewHolder(holder: CardTasrimTutucu, position: Int) {
         val filim = filimList.get(position)
         val t = holder.tasarim
