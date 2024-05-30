@@ -5,5 +5,6 @@ import java.io.Serializable
 data class Filim(var id:Int,
                  var ad:String,
                  var resim:String,
-                 var qiymet:Int):Serializable {
+                 var qiymet:Int,
+                 var url:String):Serializable {
 }

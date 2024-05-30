@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_host_na"
-    app:startDestination="@id/anasayfaFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/anasayfaFragment"
@@ -22,5 +22,26 @@
         <argument
             android:name="filim"
             app:argType="com.kenanhaciyev.movi_task.data.entity.Filim" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kenanhaciyev.movi_task.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/kecid_anasayfa"
+            app:destination="@id/anasayfaFragment" />
+        <action
+            android:id="@+id/kecid_registration"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.kenanhaciyev.movi_task.fragment.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/kecidRegister_anaseyfe"
+            app:destination="@id/anasayfaFragment" />
     </fragment>
 </navigation>
