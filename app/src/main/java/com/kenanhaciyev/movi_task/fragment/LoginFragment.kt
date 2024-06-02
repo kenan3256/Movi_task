@@ -26,7 +26,13 @@ class LoginFragment : Fragment() {
 
         binding.btnLogin.setOnClickListener {
 
-            findNavController().navigate(R.id.kecid_anasayfa)
+            if(binding.etLoginEmail.text.toString() =="kenan" && binding.etLoginPassword.text.toString() =="123"){
+                findNavController().navigate(R.id.kecid_anasayfa)
+            }else{
+                Snackbar.make(view, "Email veya şifre yanlış", Snackbar.LENGTH_SHORT).show()
+            }
+
+
 
         }
         binding.tvRegisterLink.setOnClickListener {
